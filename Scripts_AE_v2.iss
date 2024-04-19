@@ -1,4 +1,4 @@
-﻿// Resource & Rookie® - EXE For File Extension Special AE
+﻿// Resource & Rookie® - EXE For File Scripts AE
 // Create by: Gyn, LongLeo
 
 [Setup]
@@ -20,7 +20,7 @@ AppVersion={#MyAppVersion}
 AppCopyright=Copyright (C) 2023 Resource & Rookie.
 AppContact=Resource & Rookie
 AppVerName={#MyAppName}
-LicenseFile=Extension_PTS.txt
+LicenseFile=Scripts_AE.txt
 UninstallDisplayName={#MyAppName}
 UninstallDisplayIcon=R&R.ico
 ;AppReadmeFile=https://www.facebook.com/ResourceRookie2023/
