@@ -169,7 +169,7 @@ Root: HKCU; Subkey: "Software\Adobe\CSXS.10"; ValueType: string; ValueName: "Pla
 #define outputCustom "Tuỷ chỉnh đường dẫn nếu muốn C:\ProgramData\Adobe "
 
 [UninstallDelete]
-Type: files; Name: "{app}\config.txt"
+Type: filesandordirs; Name: "{app}";
 
 [Files]
 //---------Đưa toàn bộ file vào exe lưu trữ
