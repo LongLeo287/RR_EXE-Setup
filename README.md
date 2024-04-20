@@ -4,7 +4,7 @@
 
 **Setup Exe:** Extension/Scripts/Plugins/Presets for PTS/AE/PR/......
 
-## Resource & Rookie® - EXE For File Extension Special AE
+## Resource & Rookie® - EXE For File (Extension/Scripts/Plugins/Presets)
 
 **Created by:** Gyn, LongLeo
 
