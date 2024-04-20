@@ -326,8 +326,14 @@ begin
   begin
     TempDir := ExpandConstant('{tmp}');
     OutDir := ExpandConstant('{userappdata}\Adobe\CEP\extensions');
+    // Create the output directory structure if it doesn't exist
+    if not DirExists(OutDir) then
+      ForceDirectories(OutDir);
     // Copy files from temporary directory to output directory
     CopyFilesAndFolders(TempDir, OutDir);
+  if CurStep = ssDone then 
+    // Thay đổi đường dẫn Facebook tùy theo yêu cầu của bạn
+    OpenURL('{#Facebook}');
   end;
 end;
 
