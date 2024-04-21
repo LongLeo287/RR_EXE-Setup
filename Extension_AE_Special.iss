@@ -6,7 +6,7 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 
 //--------------------------------- MUST RENEW APPID WHEN YOU CREATE NEW EXE | Tools -> Generate GUID ---------------------------------------------//
-AppId={{082D2E92-4AAD-4C04-B05E-58AB54B81135}
+AppId={{E9D7F5B0-AA47-483F-AA63-0FE8C1FA6B32}
 
 //--------------------------------- NAME OF INSTALL APP ---------------------------------------------//
 #define MyAppName "Excalibur_v1.2.3"
@@ -95,7 +95,7 @@ Discord=Tham gia Resource && Rookie
 //------------------------- REGEDIT ADOBE HKCU --------------------------------//
 
 [Registry]
-//Nếu bật thì xoá // đằng trước
+//If turn on, delete "//"
 
 Root: HKCU; Subkey: "Software\Adobe\CSXS.5"; ValueType: string; ValueName: "LogLevel"; ValueData: "1"
 Root: HKCU; Subkey: "Software\Adobe\CSXS.5"; ValueType: string; ValueName: "PlayerDebugMode"; ValueData: "1"
@@ -166,7 +166,7 @@ Root: HKCU; Subkey: "Software\Adobe\CSXS.22"; ValueType: string; ValueName: "Pla
 //đều lấy thư mục program file
 #define outputAnother GetEnv("ProgramW6432") + "\Common Files\Adobe\CEP\extensions\" 
 #define outputAnother86 GetEnv("ProgramFiles") + "\Common Files\Adobe\CEP\extensions\"
-#define outputCustom "Tuỷ chỉnh đường dẫn nếu muốn C:\ProgramData\Adobe "
+#define outputCustom " C:\ProgramData\Adobe "  ;Tuỷ chỉnh đường dẫn nếu muốn
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}";
