@@ -1,5 +1,5 @@
-﻿// Resource & Rookie® - EXE For Flugins AE
-// Create by: Gyn, LongLeo
+// Resource & Rookie® - EXE For Flugins AE
+// Created by: Gyn, LongLeo
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
