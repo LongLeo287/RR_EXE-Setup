@@ -1,4 +1,4 @@
-﻿// Resource & Rookie® - EXE For File Extension PTS
+// Resource & Rookie® - EXE For File Extension PTS
 // Create by: Gyn, LongLeo
 
 [Setup]
