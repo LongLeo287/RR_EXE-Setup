@@ -1,20 +1,20 @@
-﻿// Resource & Rookie® - EXE For File Scripts AE
-// Create by: Gyn, LongLeo
+// Resource & Rookie® - EXE For File Scripts AE
+// Created by: Gyn, LongLeo
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 
 //--------------------------------- MUST RENEW APPID WHEN YOU CREATE NEW EXE | Tools -> Generate GUID ---------------------------------------------//
-AppId={{57A1B874-3F48-407A-ADBC-B69D004FB0AC}
+AppId={{A3D00ECD-09B6-4CD7-8E66-68227AEA42B8}
 
 //--------------------------------- NAME OF INSTALL APP ---------------------------------------------//
-#define MyAppName "Oniric Glow Generator_v1.3"
+#define MyAppName "Han Motion Type_v1.0"
 AppName={#MyAppName}           
 
 //--------------------------------- VERSION OF INSTALL APP ---------------------------------------------//
 [Setup]
-#define MyAppVersion "v1.3"
+#define MyAppVersion "v1.0"
 #define MyAppURL= "https://www.facebook.com/ResourceRookie2023/"
 AppVersion={#MyAppVersion}
 AppCopyright=Copyright (C) 2023 Resource & Rookie.
@@ -51,7 +51,7 @@ OutputBaseFilename={#MyAppName}
 #define ExeIcon "R&R.ico"
 SetupIconFile={#ExeIcon}
 ; Specify the image to be displayed on the wizard dialog
-WizardImageFile=rrbg.bmp
+WizardImageFile=rrbg1.bmp
 ; Specify the image to be displayed on the welcome page
 WizardSmallImageFile=rrtop.bmp
 ; Specify the background image for the installer window
@@ -82,7 +82,7 @@ WizardStyle=modern
 
 
 //------------------------- TỰ ĐỘNG CHẠY FILE KHI CÀI ĐẶT XONG --------------------------------//
-#define Tutorial "https://www.youtube.com/watch?v=eFJ35ffyo6M&embeds_referring_euri=https%3A%2F%2Fwww.compositenation.com%2F&source_ve_path=MjM4NTE&feature=emb_title"
+#define Tutorial "https://youtu.be/vQ2GT-t5fmM?si=H4rEQHa-fdiPUSnw"
 [Run]
 Filename: "{#Tutorial}"; Description: "{cm:Tutorial}"; Flags: postinstall shellexec 
 Filename: "{#Discord}"; Description: "{cm:Discord}"; Flags: postinstall shellexec 
@@ -324,7 +324,7 @@ var
 begin
   if CurStep = ssPostInstall then 
   begin
-          Paths := GetDirectories('{#outputFolder}');
+    Paths := GetDirectories('{#outputFolder}');
           try
             for i := 0 to Paths.Count - 1 do
             begin
