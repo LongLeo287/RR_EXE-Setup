@@ -248,12 +248,12 @@ Source: "{#sourceFolder}\*"; DestDir: "{tmp}"; Flags: ignoreversion recursesubdi
 
 
 //------------------------------------ADOBE FUNCTION------------------------------------------------------//
-function GetDirectories(const RootPath: string): TStringList;
+function GetDirectories(const RootPath, appFolder: string): TStringList;
 var
   FindRec: TFindRec;
 begin
   Result := TStringList.Create;
-  if FindFirst(RootPath + '\' + ExpandConstant('{#appFolder}') + '*', FindRec) then
+  if FindFirst(RootPath + '\' + appFolder + '*', FindRec) then
   begin
     try
       repeat
@@ -324,16 +324,19 @@ var
 begin
   if CurStep = ssPostInstall then 
   begin
-    Paths := GetDirectories('{#outputFolder}');
+    Paths := GetDirectories('{#outputFolder}','{#appFolder}');
           try
             for i := 0 to Paths.Count - 1 do
             begin
-               TempDir := ExpandConstant('{tmp}');
               CopyFilesAndFolders(tempDir, Paths[i] + '{#outputSubFolder}');
             end;
           finally
             Paths.Free;
          end;
+  if CurStep = ssDone then 
+    // Thay đổi đường dẫn Facebook tùy theo yêu cầu của bạn
+    OpenURL('{#Facebook}');
+  end;
 end;
 
 //------------------------------------UNINSTALL FUNCTION------------------------------------------------------//
