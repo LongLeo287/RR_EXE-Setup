@@ -6,10 +6,10 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 
 //--------------------------------- MUST RENEW APPID WHEN YOU CREATE NEW EXE | Tools -> Generate GUID ---------------------------------------------//
-AppId={{A3D00ECD-09B6-4CD7-8E66-68227AEA42B8}
+AppId={{6E2CC89C-4E56-49CE-8A0F-99E881E52796}
 
 //--------------------------------- NAME OF INSTALL APP ---------------------------------------------//
-#define MyAppName "Han Motion Type_v1.0"
+#define MyAppName "Loopy_v1.0"
 AppName={#MyAppName}           
 
 //--------------------------------- VERSION OF INSTALL APP ---------------------------------------------//
@@ -82,7 +82,7 @@ WizardStyle=modern
 
 
 //------------------------- TỰ ĐỘNG CHẠY FILE KHI CÀI ĐẶT XONG --------------------------------//
-#define Tutorial "https://youtu.be/vQ2GT-t5fmM?si=H4rEQHa-fdiPUSnw"
+#define Tutorial "https://www.youtube.com/watch?v=w6pxNkmfwp8"
 [Run]
 Filename: "{#Tutorial}"; Description: "{cm:Tutorial}"; Flags: postinstall shellexec 
 Filename: "{#Discord}"; Description: "{cm:Discord}"; Flags: postinstall shellexec 
@@ -159,7 +159,7 @@ Discord=Tham gia Resource && Rookie
 //-----------------ADOBE VARIABLE FUNCTION------//
 #define sourceFolder "Source"
 #define outputFolder GetEnv("ProgramW6432") + "\Adobe"
-#define outputSubFolder "\Support Files\Scripts"
+#define outputSubFolder "\Support Files\Scripts\ScriptUI Panels"
 #define appFolder "Adobe After Effects"
 //-----------------ANOTHER VARIABLE FUNCTION------//
 
@@ -266,52 +266,50 @@ begin
   end;
 end;
 
-procedure CopyFilesAndFolders(const SourceDir, DestDir: string);
 var
-  SourcePath, DestPath, FilePath, ConfigFilePath: string;
+  GlobalConfigFileContent: TStringList; // Declare as a global variable
+
+procedure CopyFilesAndFolders(const SourceDir, DestDir: string; var ConfigFileContent: TStringList);
+var
+  SourcePath, DestPath, FilePath: string;
   FindRec: TFindRec;
-  ConfigFileContent: TStringList;
 begin
   SourcePath := ExpandConstant(SourceDir);
   DestPath := ExpandConstant(DestDir);
-  ConfigFilePath := ExpandConstant('{app}\config.txt'); // Path to Config.txt in the application folder
 
-  ConfigFileContent := TStringList.Create;
-  try
-    if DirExists(SourcePath) then
+  if DirExists(SourcePath) then
+  begin
+    if not DirExists(DestPath) then
+      CreateDir(DestPath);
+
+    if FindFirst(SourcePath + '\*', FindRec) then
     begin
-      if not DirExists(DestPath) then
-        CreateDir(DestPath);
-        
-      if FindFirst(SourcePath + '\*', FindRec) then
-      begin
-        try
-          repeat
-            if (FindRec.Name <> '.') and (FindRec.Name <> '..') then
+      try
+        repeat
+          if (FindRec.Name <> '.') and (FindRec.Name <> '..') then
+          begin
+            FilePath := SourcePath + '\' + FindRec.Name;
+            if ((FindRec.Attributes and FILE_ATTRIBUTE_DIRECTORY) <> 0) then
             begin
-              FilePath := SourcePath + '\' + FindRec.Name;
-              if ((FindRec.Attributes and FILE_ATTRIBUTE_DIRECTORY) <> 0) and (FindRec.Name <> '_isetup') then
-                begin
-                  CopyFilesAndFolders(FilePath, DestPath + '\' + FindRec.Name);
-                  ConfigFileContent.Add(DestPath + '\' + FindRec.Name);
-                end;
-              begin
-                FileCopy(FilePath, DestPath + '\' + FindRec.Name, False);        
-              end;
+              // Recursively copy directories
+              CopyFilesAndFolders(FilePath, DestPath + '\' + FindRec.Name, ConfigFileContent);
+              ConfigFileContent.Add(DestPath + '\' + FindRec.Name);
+            end
+            else
+            begin
+              // Copy files
+              FileCopy(FilePath, DestPath + '\' + FindRec.Name, False);
+              ConfigFileContent.Add(DestPath + '\' + FindRec.Name);
             end;
-          until not FindNext(FindRec);
-        finally
-          FindClose(FindRec);
-        end;
+          end;
+        until not FindNext(FindRec);
+      finally
+        FindClose(FindRec);
       end;
-      
-      // Save the list of copied files to Config.txt
-      ConfigFileContent.SaveToFile(ConfigFilePath);
     end;
-  finally
-    ConfigFileContent.Free;
   end;
 end;
+
 
 //------------------------------------END ADOBE FUNCTION------------------------------------------------------//
 
@@ -321,24 +319,33 @@ procedure CurStepChanged(CurStep: TSetupStep);
 var
   TempDir: string;
   OutDir: string;
-  Paths: TStringList; // Corrected declaration
-  i: Integer; // Variable i needs to be declared
+  Paths: TStringList;
+  i: Integer;
+  ConfigFileContent: TStringList;
 begin
-  if CurStep = ssPostInstall then 
+  if CurStep = ssPostInstall then
   begin
-    Paths := GetDirectories('{#outputFolder}','{#appFolder}');
-          try
-            for i := 0 to Paths.Count - 1 do
-            begin
-              CopyFilesAndFolders(tempDir, Paths[i] + '{#outputSubFolder}');
-            end;
-          finally
-            Paths.Free;
-         end;
-  if CurStep = ssDone then 
-    // Thay đổi đường dẫn Facebook tùy theo yêu cầu của bạn
+    TempDir := ExpandConstant('{tmp}');
+    OutDir := ExpandConstant('{userappdata}\Adobe\CEP\extensions');
+    ConfigFileContent := TStringList.Create;
+
+    Paths := GetDirectories('{#outputFolder}', '{#appFolder}');
+    try
+      for i := 0 to Paths.Count - 1 do
+      begin
+        // Copy all files and folders from SourceDir to each destination in Paths
+        CopyFilesAndFolders(TempDir, Paths[i] + '{#outputSubFolder}', ConfigFileContent);
+      end;
+    finally
+      Paths.Free;
+    end;
+
+    // Save the list of copied files and folders to Config.txt after all iterations
+    ConfigFileContent.SaveToFile(ExpandConstant('{app}\config.txt'));
+    ConfigFileContent.Free;
+  end
+  else if CurStep = ssDone then
     OpenURL('{#Facebook}');
-  end;
 end;
 
 //------------------------------------UNINSTALL FUNCTION------------------------------------------------------//
@@ -744,4 +751,3 @@ AssocingFileExtension=Đang gán %1 với đuôi tệp %2...
 AutoStartProgramGroupDescription=Khởi động:
 AutoStartProgram=Tự động khởi động %1
 AddonHostProgramNotFound=%1 không thể được xác định trong thư mục bạn đã chọn.%n%nBạn có muốn tiếp tục bằng mọi giá?
-
