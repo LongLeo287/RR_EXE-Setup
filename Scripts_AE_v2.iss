@@ -321,6 +321,8 @@ procedure CurStepChanged(CurStep: TSetupStep);
 var
   TempDir: string;
   OutDir: string;
+  Paths: TStringList; // Corrected declaration
+  i: Integer; // Variable i needs to be declared
 begin
   if CurStep = ssPostInstall then 
   begin
