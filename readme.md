@@ -1,4 +1,14 @@
 # EXE SETUP FOR Resource & Rookie
+
+## LIST TREE
+- Data
+- Lib
+- Information
+- Output
+- Source
+- template.iss
+
+
 ## ENGLISH INFORMATION
 ### Setup Information
 
