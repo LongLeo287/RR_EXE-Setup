@@ -2,7 +2,7 @@
 // Created by: Gyn, LongLeo
 
 ; Include ISS
-#include "Data/vietnamese.iss"
+#include "lib/vietnamese.iss"
 #include "lib/define.iss"
 #include "lib/lib.iss"
 
