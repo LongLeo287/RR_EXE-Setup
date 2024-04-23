@@ -1,4 +1,4 @@
-// Resource & Rookie® - EXE For File Scripts AE
+// Resource & Rookie� - EXE For File Scripts AE
 // Created by: Gyn, LongLeo
 
 ; Include ISS
@@ -63,9 +63,9 @@ Password=R&R
     Type: filesandordirs; Name: "{app}";
 
     [Files]
-    //---------ÄÆ°a toÃ n bá»™ file vÃ o exe lÆ°u trá»¯
+    //---------Đưa toàn bộ file vào exe lưu trữ
     Source: "{#sourceFolder}\*"; DestDir: "{tmp}"; Flags: ignoreversion recursesubdirs createallsubdirs
-    //------------------------- Tá»° Äá»˜NG CHáº Y FILE KHI CÃ€I Äáº¶T XONG --------------------------------//
+    //------------------------- TỰ ĐỘNG CHẠY FILE KHI CÀI ĐẶT XONG --------------------------------//
 
     [Run]
     Filename: "{#Tutorial}"; Description: "{cm:Tutorial}"; Flags: postinstall shellexec 
@@ -74,7 +74,7 @@ Password=R&R
 //------------------------- REGEDIT ADOBE HKCU --------------------------------//
 
 [Registry]
-//Náº¿u báº­t thÃ¬ xoÃ¡ // Ä‘áº±ng trÆ°á»›c
+//Nếu bật thì xoá // đằng trước
 
 //Root: HKCU; Subkey: "Software\Adobe\CSXS.5"; ValueType: string; ValueName: "LogLevel"; ValueData: "1"
 //Root: HKCU; Subkey: "Software\Adobe\CSXS.5"; ValueType: string; ValueName: "PlayerDebugMode"; ValueData: "1"
@@ -134,7 +134,7 @@ Password=R&R
 //Root: HKCU; Subkey: "Software\Adobe\CSXS.22"; ValueType: string; ValueName: "PlayerDebugMode"; ValueData: "1"
 
 //------------------------- CUSTOM CODE FOR EXE --------------------------------//
-; XoÃ¡ dáº¥u // trÆ°á»›c dÃ²ng cho tá»«ng trÆ°á»ng há»£p
+; Xoá dấu // trước dòng cho từng trường hợp
 [Code]
 
 procedure CurStepChanged(CurStep: TSetupStep);
@@ -151,13 +151,13 @@ begin
     ConfigFileContent := TStringList.Create;
    
    
-   ///////////////////////////////////[ TrÆ°á»ng há»£p Appdata ]/////////////////////////////////
+   ///////////////////////////////////[ Trường hợp Appdata ]/////////////////////////////////
 
         //  OutDir := ExpandConstant('{userappdata}\Adobe\CEP\extensions');
         //  if not DirExists(OutDir) then ForceDirectories(OutDir);
         //  CopyFilesAndFolders(TempDir, OutDir, ConfigFileContent);
 
-   ////////////////////////////////[ TrÆ°á»ng há»£p Folder ADOBE/PhiÃªn báº£n ]/////////////////////////////////
+   ////////////////////////////////[ Trường hợp Folder ADOBE/Phiên bản ]/////////////////////////////////
     
     //-----------------ADOBE VARIABLE FUNCTION------//
     #define outputFolder GetEnv("ProgramW6432") + "\Adobe"
