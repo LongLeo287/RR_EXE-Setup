@@ -1,4 +1,6 @@
-﻿//======================================================================================================================================================================//
+// Resource & Rookie® - EXE SETUP
+// Created by: Gyn, LongLeo
+
 //------------------------- VIETNAMESE LANGUAGE FOR EXE --------------------------------//
 
 ; The custom messages below aren't used by Setup itself, but if you make
@@ -363,5 +365,3 @@ StatusUninstalling=Đang gỡ cài đặt %1...
 ; *** Shutdown block reasons
 ShutdownBlockReasonInstallingApp=Đang cài đặt %1.
 ShutdownBlockReasonUninstallingApp=Đang gỡ cài đặt %1.
-
-
