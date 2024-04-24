@@ -6,7 +6,8 @@
 - Information
 - Output
 - Source
-- template.iss
+- FILE ISS
+- Template SETUP EXE.iss
 
 
 ## ENGLISH INFORMATION
