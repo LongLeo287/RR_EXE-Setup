@@ -1,4 +1,4 @@
-// Resource & Rookie® - EXE For File Scripts AE
+// Resource & Rookie® - EXE SETUP
 // Created by: Gyn, LongLeo
 
 ; Include ISS
