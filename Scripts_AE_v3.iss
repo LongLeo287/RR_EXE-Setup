@@ -1,4 +1,4 @@
-// Resource & Rookie® - EXE For File Scripts AE
+// Resource & RookieÂ® - EXE For File Scripts AE
 // Created by: Gyn, LongLeo
 
 ; Include ISS
@@ -12,6 +12,7 @@
 
 //--------------------------------- MUST RENEW APPID WHEN YOU CREATE NEW EXE | Tools -> Generate GUID ---------------------------------------------//
 AppId={{39949AA5-2B2E-44DF-BF47-445A68EBE22D}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 [Setup]
 #define MyAppName "Loopy_v1.0"
