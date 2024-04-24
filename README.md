@@ -1,16 +1,16 @@
-# RR_Setup EXE_v2
+# R&R_Setup EXE_v3
 
 **Created by:** Gyn, LongLeo
 
-**Setup Exe:** Extension/Scripts/Plugins/Presets for PTS/AE/PR/......
+**Setup Exe:** Extensions/Scripts/Plugins/Presets for PTS/AE/PR/......
 
-## Resource & Rookie® - EXE For File (Extension/Scripts/Plugins/Presets)
+## Resource & Rookie® - SETUP EXE For File (Extensions/Scripts/Plugins/Presets)
 
 **Created by:** Gyn, LongLeo
 
 ## Setup Details
 
-- **App Name:** Extension Name
+- **App Name:** File Name
 - **Version:** v1.0
 - **Publisher:** Resource & Rookie
 - **Publisher URLs:** [Discord](https://discord.gg/resource-rookie-r-1154264290535161876), [Facebook](https://www.facebook.com/ResourceRookie2023/)
@@ -20,7 +20,7 @@
 
 ## Run
 
-- Open Tutorial: [Tutorial](https://www.youtube.com/watch?v=eFJ35ffyo6M&embeds_referring_euri=https%3A%2F%2Fwww.compositenation.com%2F&source_ve_path=MjM4NTE&feature=emb_title)
+- Open Tutorial: [Tutorial](link)
 - Join Discord: [Discord](https://discord.gg/resource-rookie-r-1154264290535161876)
 
 ## Code
