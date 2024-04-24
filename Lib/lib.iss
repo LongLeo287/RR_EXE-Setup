@@ -1,8 +1,11 @@
-﻿#include "define.iss"
+// Resource & Rookie® - EXE SETUP
+// Created by: Gyn, LongLeo
+
+#include "define.iss"
 [Code]
 
   //------------------------------------MAIN FUNCTION------------------------------------------------------//
-     // Hàm mở đường dẫn URL trên trình duyệt web
+     // Function to open a URL in a web browser
         procedure OpenURL(const URL: String);
         var
           ErrorCode: Integer;
@@ -12,16 +15,16 @@
 
      //------------------------------------BUTTON FUNCTION------------------------------------------------------//
 
-        // Hàm xử lý sự kiện khi nhấn vào nút Discord
+        // Event handler function when clicking the Discord button
         procedure ButtonClick(Sender: TObject);
         begin
-          OpenURL('{#Discord}'); // Thay đổi đường dẫn Discord tùy theo yêu cầu của bạn
+          OpenURL('{#Discord}'); // Change the Discord link according to your requirements
         end;
 
-        // Hàm xử lý sự kiện khi nhấn vào nút Facebook
+        // Event handler function when clicking the Facebook button
         procedure Button2Click(Sender: TObject);
         begin
-          OpenURL('{#Facebook}'); // Thay đổi đường dẫn Facebook tùy theo yêu cầu của bạn
+          OpenURL('{#Facebook}'); // Change the Facebook link according to your requirements
         end;
     //------------------------------------END BUTTON FUNCTION------------------------------------------------------//
 
@@ -32,25 +35,25 @@
             Button2: TNewButton;
           begin
           //---------------------------------------------------------------  
-           // Tạo nút Discord
-          Button := TNewButton.Create(WizardForm);
-          Button.Parent := WizardForm;
-          Button.Left := 20; // Adjust left position
-          Button.Top := WizardForm.ClientHeight - Button.Height + 60; // Position at the bottom
-          Button.Width := 100;
-          Button.Height := 30;
-          Button.Caption := 'Discord';
-          Button.OnClick := @ButtonClick;
+            // Create Discord button
+            Button := TNewButton.Create(WizardForm);
+            Button.Parent := WizardForm;
+            Button.Left := WizardForm.ClientWidth div 10; // 10% from the left edge
+            Button.Top := WizardForm.ClientHeight - Button.Height + 60; // Position at the bottom
+            Button.Width := WizardForm.ClientWidth div 10; // 10% width of the form
+            Button.Height := 30;
+            Button.Caption := 'Discord';
+            Button.OnClick := @ButtonClick;
 
-            // Tạo nút Facebook
-          Button2 := TNewButton.Create(WizardForm);
-          Button2.Parent := WizardForm;
-          Button2.Left := 130; // Adjust left position
-          Button2.Top := WizardForm.ClientHeight - Button2.Height + 60; // Position at the bottom
-          Button2.Width := 100;
-          Button2.Height := 30;
-          Button2.Caption := 'Facebook';
-          Button2.OnClick := @Button2Click;
+            // Create Facebook button
+            Button2 := TNewButton.Create(WizardForm);
+            Button2.Parent := WizardForm;
+            Button2.Left := WizardForm.ClientWidth div 2; // 50% from the left edge
+            Button2.Top := WizardForm.ClientHeight - Button2.Height + 60; // Position at the bottom
+            Button2.Width := WizardForm.ClientWidth div 10; // 10% width of the form
+            Button2.Height := 30;
+            Button2.Caption := 'Facebook';
+            Button2.OnClick := @Button2Click;
           end;
 
         function DotNet4NotInstalled: Boolean;
@@ -58,7 +61,7 @@
           Result := not IsDotNetInstalled(net4Full,0);
         end;
 
-        // Hiển thị hộp thoại thông tin khi bắt đầu cài đặt
+        // Displays an information dialog when starting the installation
         function InitializeSetup(): Boolean;
         begin
          MsgBox('Bản quyền thuộc về Resource & Rookie®', mbInformation, MB_OK);
