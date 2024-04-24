@@ -160,7 +160,7 @@ begin
     #define outputAnother86 GetEnv("ProgramFiles") + "\Common Files\Adobe\CEP\extensions\"
     #define outputCustom " C:\ProgramData\Adobe "    ;Customize the path if desired
 
-        //  if not DirExists(OutDir) then ForceDirectories(OutDir);
+          if not DirExists(OutDir) then ForceDirectories(OutDir);
           CopyFilesAndFolders(TempDir, '{#outputAnother86}', ConfigFileContent);   
 
 /////////////////////////////////////////////// DO NOT TOUCH IF YOU DONT KNOW WHAT'RE YOU DOING //////////////////////////////////////////////////////////   
