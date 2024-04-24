@@ -1,4 +1,4 @@
-// Resource & Rookie� - EXE For File Scripts AE
+// Resource & Rookie® - EXE For File Scripts AE
 // Created by: Gyn, LongLeo
 
 ; Include ISS
@@ -11,12 +11,12 @@
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 
 //--------------------------------- MUST RENEW APPID WHEN YOU CREATE NEW EXE | Tools -> Generate GUID ---------------------------------------------//
-AppId={{EA4CFE4A-BEB6-41F4-8DC2-6D91064D1D88}
+AppId={{39949AA5-2B2E-44DF-BF47-445A68EBE22D}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 [Setup]
 #define MyAppName "Loopy_v1.0"
 #define MyAppVersion "v1.0"
-LicenseFile=G:\EXE\RR EXE Setup v3\Information\Scripts_AE.txt
+LicenseFile=Information\Scripts_AE.txt
 UninstallDisplayIcon=Data\R&R.ico
 ;AppReadmeFile=https://www.facebook.com/ResourceRookie2023/
 
@@ -63,9 +63,9 @@ Password=R&R
     Type: filesandordirs; Name: "{app}";
 
     [Files]
-    //---------Đưa toàn bộ file vào exe lưu trữ
+    //---------Put all files into the archived exe
     Source: "{#sourceFolder}\*"; DestDir: "{tmp}"; Flags: ignoreversion recursesubdirs createallsubdirs
-    //------------------------- TỰ ĐỘNG CHẠY FILE KHI CÀI ĐẶT XONG --------------------------------//
+    //------------------------- AUTOMATICALLY RUN THE FILE WHEN INSTALLATION IS COMPLETED --------------------------------//
 
     [Run]
     Filename: "{#Tutorial}"; Description: "{cm:Tutorial}"; Flags: postinstall shellexec 
@@ -74,7 +74,7 @@ Password=R&R
 //------------------------- REGEDIT ADOBE HKCU --------------------------------//
 
 [Registry]
-//Nếu bật thì xoá // đằng trước
+//If enabled, remove the //
 
 //Root: HKCU; Subkey: "Software\Adobe\CSXS.5"; ValueType: string; ValueName: "LogLevel"; ValueData: "1"
 //Root: HKCU; Subkey: "Software\Adobe\CSXS.5"; ValueType: string; ValueName: "PlayerDebugMode"; ValueData: "1"
@@ -134,7 +134,7 @@ Password=R&R
 //Root: HKCU; Subkey: "Software\Adobe\CSXS.22"; ValueType: string; ValueName: "PlayerDebugMode"; ValueData: "1"
 
 //------------------------- CUSTOM CODE FOR EXE --------------------------------//
-; Xoá dấu // trước dòng cho từng trường hợp
+; Delete the // sign before the line for each case
 [Code]
 
 procedure CurStepChanged(CurStep: TSetupStep);
@@ -151,13 +151,13 @@ begin
     ConfigFileContent := TStringList.Create;
    
    
-   ///////////////////////////////////[ Trường hợp Appdata ]/////////////////////////////////
+   ///////////////////////////////////[ Appdata ]/////////////////////////////////
 
         //  OutDir := ExpandConstant('{userappdata}\Adobe\CEP\extensions');
         //  if not DirExists(OutDir) then ForceDirectories(OutDir);
         //  CopyFilesAndFolders(TempDir, OutDir, ConfigFileContent);
 
-   ////////////////////////////////[ Trường hợp Folder ADOBE/Phiên bản ]/////////////////////////////////
+   ////////////////////////////////[ Folder ADOBE/Version ]/////////////////////////////////
     
     //-----------------ADOBE VARIABLE FUNCTION------//
     #define outputFolder GetEnv("ProgramW6432") + "\Adobe"
