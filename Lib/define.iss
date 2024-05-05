@@ -1,7 +1,7 @@
 // -------------------------------INFOMATION----------------------------------- //
 //                                                                              //
 //               EXE For File Plugins AE/PR                                     //
-//               Script Version:	v3.1                                         //
+//               Script Version:	v3.1                                          //
 //               Homepage:	https://www.facebook.com/ResourceRookie2023         //
 //               Copyright (C) 2023 Resource & Rookie®                          //
 //               All rights reserved.                                           //
