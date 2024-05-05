@@ -1,5 +1,14 @@
-// Resource & Rookie® - EXE SETUP
-// Created by: Gyn, LongLeo
+// --------------------------------- INFOMATION ------------------------------- //
+//                                                                              //
+//               EXE For File Plugins AE/PR                                     //
+//               Script Version:	v3.1                                          //
+//               Homepage:		https://www.facebook.com/ResourceRookie2023       //
+//               Copyright (C) 2023 Resource & Rookie®                          //
+//               All rights reserved.                                           //
+//               Author: Gyn, LongLeo                                           //
+//                                                                              //
+// ------------------------------------ R&R ----------------------------------- //
+
 
 #include "define.iss"
 [Code]
@@ -28,37 +37,43 @@
         end;
     //------------------------------------END BUTTON FUNCTION------------------------------------------------------//
 
-    //------------------------------------INITIALZE FUNCTION------------------------------------------------------//
-        procedure InitializeWizard();
-          var
-            Button: TNewButton;
-            Button2: TNewButton;
-          begin
-          //---------------------------------------------------------------  
-            // Create Discord button
-            Button := TNewButton.Create(WizardForm);
-            Button.Parent := WizardForm;
-            Button.Left := WizardForm.ClientWidth div 10; // 10% from the left edge
-            Button.Top := WizardForm.ClientHeight - Button.Height + 60; // Position at the bottom
-            Button.Width := WizardForm.ClientWidth div 10; // 10% width of the form
-            Button.Height := 30;
-            Button.Caption := 'Discord';
-            Button.OnClick := @ButtonClick;
+    //------------------------------------INITIALIZE FUNCTION------------------------------------------------------//
+        const
+         ButtonWidth = 100;
+         ButtonHeight = 30;
+         BottomMargin = 60;
+         LeftMarginPercent = 10;
+         RightMarginPercent = 50;
 
-            // Create Facebook button
-            Button2 := TNewButton.Create(WizardForm);
-            Button2.Parent := WizardForm;
-            Button2.Left := WizardForm.ClientWidth div 2; // 50% from the left edge
-            Button2.Top := WizardForm.ClientHeight - Button2.Height + 60; // Position at the bottom
-            Button2.Width := WizardForm.ClientWidth div 10; // 10% width of the form
-            Button2.Height := 30;
-            Button2.Caption := 'Facebook';
-            Button2.OnClick := @Button2Click;
-          end;
-
-        function DotNet4NotInstalled: Boolean;
+        procedure CreateButton(Parent: TWinControl; const Caption: string; LeftPos, TopPos: Integer; OnClick: TNotifyEvent);
+        var
+         Button: TNewButton;
         begin
-          Result := not IsDotNetInstalled(net4Full,0);
+         Button := TNewButton.Create(WizardForm);
+         Button.Parent := Parent;
+         Button.Width := WizardForm.NextButton.Width; // Set the width to ButtonWidth constant
+         Button.Height := WizardForm.NextButton.Height; // Set the height to ButtonHeight constant
+         Button.Caption := Caption;
+         Button.Left := LeftPos; // Use the LeftPos parameter for left position
+         Button.Top := WizardForm.NextButton.Top; // Use the TopPos parameter for top position
+         Button.OnClick := OnClick;
+         Button.Anchors := [akLeft, akBottom];
+        end;
+
+        procedure InitializeWizard();
+        var
+         LeftMargin, RightMargin: Integer;
+        begin
+         LeftMargin := WizardForm.ClientWidth * LeftMarginPercent div 120;
+         RightMargin := WizardForm.ClientWidth * RightMarginPercent div 80;
+
+         CreateButton(WizardForm, 'Discord', LeftMargin, WizardForm.ClientHeight - ButtonHeight - BottomMargin, @ButtonClick);
+         CreateButton(WizardForm, 'Facebook', WizardForm.ClientWidth - RightMargin - ButtonWidth, WizardForm.ClientHeight - ButtonHeight - BottomMargin, @Button2Click);
+        end;
+
+        function IsDotNet4NotInstalled: Boolean;
+        begin
+         Result := not IsDotNetInstalled(net4Full, 0);
         end;
 
         // Displays an information dialog when starting the installation
