@@ -1,32 +1,45 @@
-// Resource & Rookie® - EXE For File Plugin/Scripts/Presets AE/PR
-// Created by: Gyn, LongLeo
+// --------------------------------- INFOMATION ------------------------------- //
+//                                                                              //
+//               EXE For File Srcipts/Plugins/Preset AE/PR                      //
+//               Script Version:	v3.1                                          //
+//               Homepage:		https://www.facebook.com/ResourceRookie2023       //
+//               Copyright (C) 2023 Resource & RookieÂ®                          //
+//               All rights reserved.                                           //
+//               Author: Gyn, LongLeo                                           //
+//                                                                              //
+// ------------------------------------ R&R ----------------------------------- //
 
-; Include ISS
+
+// Include ISS
 #include "lib/vietnamese.iss"
 #include "lib/define.iss"
 #include "lib/lib.iss"
 
 [Setup]
-; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
+//--------------------------------- MUST RENEW APPID WHEN YOU CREATE NEW EXE | Tools -> Generate GUID ---------------------------------------------//
+; NOTE: The value of AppId uniquely identifies this application.
+; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 
-//--------------------------------- MUST RENEW APPID WHEN YOU CREATE NEW EXE | Tools -> Generate GUID ---------------------------------------------//
-AppId={{3BA8B74B-AE81-4752-8DA4-5EA2EACF84A4}
+#define TheAppId "{{DBBDDB92-B0EE-4AFF-922F-FE08FAB46749}"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 [Setup]
-#define MyAppName "Smart Bundle_v1.0"
-#define MyAppVersion "v1.0"
-LicenseFile=Information\List.txt
-UninstallDisplayIcon=Data\R&R.ico
+#define MyAppName "Film Impact Premium Video Transitions"      ; Name for the application
+#define MyAppVersion "v5.2.2"
+LicenseFile=Information\List.txt                       
 ;AppReadmeFile=https://www.facebook.com/ResourceRookie2023/
+#define Space " "
 
 //--------------------------------- URL TO AUTHOR EXE  ---------------------------------------------//
+
 AppPublisherURL={#Discord}
 AppSupportURL={#Facebook}
-#define Tutorial "https://www.youtube.com/watch?v=ZFYNcVv3Nz0"
+#define Tutorial "https://www.youtube.com/watch?v=D7pMMYfglC8"
 
 //--------------------------------- ICON FILE EXE ---------------------------------------------//
+
 SetupIconFile=Data\R&R.ico
 ; Specify the image to be displayed on the wizard dialog
 WizardImageFile=Data\rrbg1.bmp
@@ -34,22 +47,25 @@ WizardImageFile=Data\rrbg1.bmp
 WizardSmallImageFile=Data\rrtop.bmp
 
 //----------------------------- PASSWORD FOR INSTALL EXE  -------------------------------------//
-////////////////////////////
+
 Password=R&R
 
 /////////////////////////////////////////////// DO NOT TOUCH IF YOU DONT KNOW WHAT'RE YOU DOING //////////////////////////////////////////////////////////
-    //---------------------------------   -- ANOTHER SETTING ---------------------------------------------//
+    // ------------------------------------- ANOTHER SETTING ---------------------------------------------//
+    AppId={#TheAppId}
+    AppName={#MyAppName}
     AppVersion={#MyAppVersion}
-    AppCopyright= {#Copyright}
-    AppContact={#MyAppPublisher}   
-    AppVerName={#MyAppName}
-    UninstallDisplayName={#MyAppName}
-    WizardResizable = no
+    AppCopyright={#Copyright}
+    AppContact={#MyAppPublisher}
     AppPublisher={#MyAppPublisher}
+    AppVerName={#MyAppName}{#Space}{#MyAppVersion}
+    VersionInfoVersion=1.2.0.0
+    UninstallDisplayIcon={srcexe}
+    UninstallDisplayName={#MyAppName}{#Space}{#MyAppVersion}
+    WizardResizable = no
     DisableDirPage=yes
-    DefaultGroupName={#MyAppName}
-    AppName={#MyAppName}   
-    OutputBaseFilename={#MyAppName}
+    DefaultGroupName={#MyAppName}   
+    OutputBaseFilename={#MyAppName}{#Space}{#MyAppVersion}
     OutputDir={#OutputDir}
     DefaultDirName={autopf}\{#MyAppName}
     DisableProgramGroupPage=yes
