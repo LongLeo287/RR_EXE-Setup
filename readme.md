@@ -92,4 +92,4 @@ Kịch bản này có thể tùy chỉnh dựa trên yêu cầu của bạn. S�
 
 # Bản Quyền
 
-- Bản quyền © 2024 [Resource & Rookie](https://www.facebook.com/ResourceRookie2023) - [Gyn](https://www.facebook.com/gyginee/) | Long Leo.
+- Bản quyền © 2024 [Resource & Rookie](https://www.facebook.com/ResourceRookie2023) - [Gyn](https://www.facebook.com/gyginee/) | [Long Leo](https://www.facebook.com/LongLeo97/).
