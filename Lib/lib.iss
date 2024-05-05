@@ -1,4 +1,4 @@
-// --------------------------------- INFOMATION ------------------------------- //
+﻿// --------------------------------- INFOMATION ------------------------------- //
 //                                                                              //
 //               EXE For File Plugins AE/PR                                     //
 //               Script Version:	v3.1                                          //
@@ -68,7 +68,7 @@
          RightMargin := WizardForm.ClientWidth * RightMarginPercent div 80;
 
          CreateButton(WizardForm, 'Discord', LeftMargin, WizardForm.ClientHeight - ButtonHeight - BottomMargin, @ButtonClick);
-         CreateButton(WizardForm, 'Facebook', WizardForm.ClientWidth - RightMargin - ButtonWidth, WizardForm.ClientHeight - ButtonHeight - BottomMargin, @Button2Click);
+         CreateButton(WizardForm, 'Facebook', WizardForm.ClientWidth - RightMargin - ButtonWidth + 50, WizardForm.ClientHeight - ButtonHeight - BottomMargin, @Button2Click);
         end;
 
         function IsDotNet4NotInstalled: Boolean;

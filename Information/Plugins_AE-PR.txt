@@ -1,8 +1,10 @@
 
-Scripts for After Effects
+Plugins for After Effects, Premiere Pro
 Compatibility:
-	
-	After Effects	2024, 2023, 2022, 2021, 2020, CC 2019, CC 2018, CC 2017, CC 2015.3, CC 2015, CC 2014, CC, CS6
+
+
+	After Effects	2024, 2023, 2022
+	Premiere		2024, 2023, 2022
 
 
 -----------------------------------------------------------------------------

@@ -1,9 +1,9 @@
 
-Scripts for After Effects
+Extension For Davinci Resolve
 Compatibility:
-	
-	After Effects	2024, 2023, 2022, 2021, 2020, CC 2019, CC 2018, CC 2017, CC 2015.3, CC 2015, CC 2014, CC, CS6
 
+	Davinci Resolve	19, 18, 17
+	
 
 -----------------------------------------------------------------------------
 Subscribe to Resource & Rookie and get even more free content!
