@@ -1,6 +1,6 @@
 // --------------------------------- INFOMATION ------------------------------- //
 //                                                                              //
-//               EXE For File Srcipts/Plugins/Preset AE/PR                      //
+//               EXE For File Srcipts/Plugins/Preset AE                         //
 //               Script Version:	v3.1                                          //
 //               Homepage:		https://www.facebook.com/ResourceRookie2023       //
 //               Copyright (C) 2023 Resource & Rookie�                          //
