@@ -1,5 +1,13 @@
-// Resource & Rookie® - EXE SETUP
-// Created by: Gyn, LongLeo
+// --------------------------------- INFOMATION ------------------------------- //
+//                                                                              //
+//               EXE For File Plugins AE/PR                                     //
+//               Script Version:	v3.1                                          //
+//               Homepage:		https://www.facebook.com/ResourceRookie2023       //
+//               Copyright (C) 2023 Resource & Rookie®                          //
+//               All rights reserved.                                           //
+//               Author: Gyn, LongLeo                                           //
+//                                                                              //
+// ------------------------------------ R&R ----------------------------------- //
 
 //------------------------- VIETNAMESE LANGUAGE FOR EXE --------------------------------//
 
@@ -8,7 +16,7 @@
 
 [CustomMessages]
 
-NameAndVersion=%1 phiên bản %2
+//NameAndVersion=%1 phiên bản %2
 AdditionalIcons=Các lối tắt bổ sung:
 CreateDesktopIcon=Tạo một &lối tắt trên Desktop
 CreateQuickLaunchIcon=Tạo một lối tắt &Khởi động nhanh
@@ -125,9 +133,9 @@ PasswordEditLabel=&Mật khẩu:
 IncorrectPassword=Mật khẩu bạn đã nhập không đúng. Hãy thử lại.
 
 ; *** "License Agreement" wizard page
-WizardLicense=Thông tin cài đặt
-LicenseLabel=Hãy đọc những thông tin quan trọng sau trước khi tiếp tục.
-LicenseLabel3=Hãy đọc kỹ thông tin sau. Bạn phải chắc chắn phần mềm của bạn tương thích trước khi tiếp tục.
+WizardLicense=Thông tin
+LicenseLabel=Hãy đọc kỹ những thông tin quan trọng sau đây trước khi tiếp tục.
+LicenseLabel3=Khi bạn đã sẵn sàng tiếp tục để Cài đặt, hãy nhấp vào Tiếp.
 LicenseAccepted=Tô&i chấp nhận
 LicenseNotAccepted=Tôi khôn&g chấp nhận
 
