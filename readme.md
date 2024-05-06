@@ -29,7 +29,7 @@ Next, download the package from [GitHub Release](https://github.com/LongLeo287/R
 
 [Documention Guide](./docs/Documention.pdf)
 
-## LIST TREE
+## 🌳 LIST TREE
 - Data
 - Lib
 - Information
@@ -54,23 +54,23 @@ Next, download the package from [GitHub Release](https://github.com/LongLeo287/R
 - **Password**: Password for the installer.
 - Other setup configurations such as AppVersion, AppContact, OutputDir, Compression, Encryption, etc.
 
-### Files and Run Sections
+### 📁 Files and Run Sections 📦
 
 - **Files**: Specifies files to include in the installer.
 - **Run**: Specifies actions to perform after installation, like running certain files or executables.
 
-### Registry Modifications
+### ⚙️ Registry Modifications
 
 - Modifies registry entries related to Adobe CSXS versions.
 
-### Custom Code
+### ⚒️ Custom Code
 
 - Defines custom procedures for specific installation steps.
 - Copies files to specified directories based on different conditions.
 - Saves the list of copied files and folders to a configuration file.
 - Opens a URL after installation completion.
 
-### **Note**
+### 🗒️ **Note**
 
 - Certain sections are commented out with "//" for specific scenarios. Uncomment these sections as needed.
 
