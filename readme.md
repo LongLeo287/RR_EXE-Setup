@@ -20,8 +20,8 @@ First, your device needs to meet the following requirements:
 - Inno Setup (6.2.2) and above. [Inno Setup](https://jrsoftware.org/download.php/is.exe) installed.
 
 **The best support tool at work:**
-- **[Decode Jsxbin Auto](Tools/Decode Jsxbin Auto)**. Decode Jsxbin to Jsx.
-- **[Adobe ExtendScript Toolkit](Adobe Extend Script Toolkit)** Encode & Sign Jsx to Jsxbin.
+- **[Decode Jsxbin Auto](https://github.com/LongLeo287/RR_EXE-Setup/tree/c8e6b5d058f19bccddc05f6246a657c65268f30f/Tools/Decode%20Jsxbin%20Auto) **. Decode Jsxbin to Jsx.
+- **[Adobe ExtendScript Toolkit](https://github.com/LongLeo287/RR_EXE-Setup/blob/c8e6b5d058f19bccddc05f6246a657c65268f30f/Tools/Adobe%20Extend%20Script%20Toolkit)** Encode & Sign Jsx to Jsxbin.
 - **[TextToJSXBIN](vscode:extension/motionland.texttojsxbin)**. Encode Jsx to Jsxbin.
 - **[JS-Beautify for VS Code](vscode:extension/vsce-toolroom.vscode-beautify)** Or **[Prettier](https://prettier.io/docs/en/install)**. Code Formatter.
 
