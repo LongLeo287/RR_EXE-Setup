@@ -23,8 +23,11 @@ First, your device needs to meet the following requirements:
 **The best support tool at work:**
 - **[Decode Jsxbin Auto](https://github.com/LongLeo287/Decode-Jsxbin-Auto)**. Decode Jsxbin to Jsx.
 - **[Adobe ExtendScript Toolkit](https://github.com/LongLeo287/RR_EXE-Setup/blob/c8e6b5d058f19bccddc05f6246a657c65268f30f/Tools/Adobe%20Extend%20Script%20Toolkit)** Encode & Sign Jsx to Jsxbin.
-- **[TextToJSXBIN](vscode:extension/motionland.texttojsxbin)**. Encode Jsx to Jsxbin.
-- **[JS-Beautify for VS Code](vscode:extension/vsce-toolroom.vscode-beautify)** Or **[Prettier](https://prettier.io/docs/en/install)**. Code Formatter.
+- **[TextToJSXBIN](https://marketplace.visualstudio.com/items?itemName=motionland.texttojsxbin#:~:text=Select%20created%20piece%20of%20code.&text=Or%20click%20Cmd%2BR%20on,original%20code%20will%20be%20commented.)**. Encode Jsx to Jsxbin.
+- **[JS-Beautify for VS Code](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)** Or **[Prettier](https://prettier.io/docs/en/install)**. Code Formatter.
+- **[BASE64](https://www.base64decode.org/). Decode and Encode.
+- **[Deobfuscator](https://obf-io.deobfuscate.io/)**, **[JStillery](https://mindedsecurity.github.io/jstillery/)**, **[de4js](https://lelinhtinh.github.io/de4js/)**.
+- **[Javascript Compare](https://onlinetextcompare.com/js)**
 
 Next, download the package from [GitHub Release](https://github.com/LongLeo287/RR_EXE-Setup/releases). Extract it and follow the README.
 
