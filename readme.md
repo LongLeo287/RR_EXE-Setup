@@ -7,7 +7,7 @@
 <h1>
 <p align="center">Extensions, Srcipts, Presets, Plugins,....for AE, PR, AU, PTS, AI, Davinci and More...</p>
 
-## 🔗 **Social Links**
+### 🔗 **Social Links**
 
 - 🤝 Support Server: [Join Here](https://discord.gg/resource-rookie-r-1154264290535161876)
 - 🐳 Fanpage: [Visit Here](https://www.facebook.com/ResourceRookie2023)
