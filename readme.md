@@ -13,6 +13,7 @@
 - 🐳 Fanpage: [Visit Here](https://www.facebook.com/ResourceRookie2023)
 
 <br>
+
 <h1 align="center"> ✨ Install ✨ </h1>
 
 First, your device needs to meet the following requirements:
@@ -27,7 +28,7 @@ First, your device needs to meet the following requirements:
 
 Next, download the package from [GitHub Release](https://github.com/LongLeo287/RR_EXE-Setup/releases). Extract it and follow the README.
 
-[Documention Guide](./docs/Documention.pdf)
+- **[Documention Guide](./docs/Documention.pdf)**
 
 ## 🌳 LIST TREE
 - Data
