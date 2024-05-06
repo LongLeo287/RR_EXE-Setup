@@ -1,4 +1,4 @@
-**v3.1** | English | [Tiếng Việt](./docs/README.vi-VN.md)
+**v3.1** | English | [Tiếng Việt](https://github.com/LongLeo287/RR_EXE-Setup/blob/1380dca0065fb1107ee432f47afabe7507f0927c/docs/REAME.vi-VN.md)
 
 <h1 align="center">
   <br>
