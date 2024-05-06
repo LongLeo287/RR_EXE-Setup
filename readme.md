@@ -1,4 +1,4 @@
-**v3.1** | English | [Tiếng Việt](./docs/README.vi-VN.md)
+**v3.1** | English | [Tiếng Việt](./docs/REAME.vi-VN.md)
 
 <h1 align="center">
   <br>
