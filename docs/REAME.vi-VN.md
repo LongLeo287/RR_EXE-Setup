@@ -1,4 +1,4 @@
-**v3.1** | [English](readme.md) | Tiếng Việt
+**v3.1** | [English](https://github.com/LongLeo287/RR_EXE-Setup/blob/6b1812de07c46affda158c47b76d3169fca1beac/docs/REAME.en-EN.md) | Tiếng Việt
 
 <h1 align="center">
   <br>
