@@ -48,7 +48,11 @@ Next, download the package from [GitHub Release](https://github.com/LongLeo287/R
 ### 🚀 **Setup Information**
 
 - **AppId**: Unique identifier for the application.
+ ``` #define MyAppName "Your Application Name" ```
+
 - **MyAppName**: Name of the application.
+```#define MyAppVersion "Your Application Version" ```
+
 - **MyAppVersion**: Version of the application.
 - **LicenseFile**: Path to the license file.
 - **UninstallDisplayIcon**: Icon displayed during uninstallation.
