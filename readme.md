@@ -48,22 +48,53 @@ Next, download the package from [GitHub Release](https://github.com/LongLeo287/R
 ### 🚀 **Setup Information**
 
 - **AppId**: Unique identifier for the application.
- ``` #define MyAppName "Your Application Name" ```
 
 - **MyAppName**: Name of the application.
-```js 
-#define MyAppVersion "Your Application Version"
+ ```js
+ #define MyAppName "Your Application Name"
 ```
 
 - **MyAppVersion**: Version of the application.
+ ```js 
+#define MyAppVersion "Your Application Version"
+```
+
 - **LicenseFile**: Path to the license file.
+```js
+LicenseFile="Path to Your License File"
+```
+
 - **UninstallDisplayIcon**: Icon displayed during uninstallation.
+
 - **AppPublisherURL**: Publisher's URL.
+```js
+AppPublisherURL="URL of Your Application Publisher"
+```
 - **AppSupportURL**: Support URL.
+```js
+AppSupportURL="Support URL for Your Application"
+```
+
 - **SetupIconFile**: Icon file for the installer.
+```js
+SetupIconFile="Path to Icon for Setup"
+```
+
 - **WizardImageFile**: Image displayed on the wizard dialog.
+```js
+WizardImageFile="Path to Image to Display in Setup Wizard Dialog"
+```
+
 - **WizardSmallImageFile**: Image displayed on the welcome page.
+```js
+WizardSmallImageFile="Path to Image to Display on Setup Welcome Page"
+```
+
 - **Password**: Password for the installer.
+```js
+Password="Password for EXE Installation"
+```
+
 - Other setup configurations such as AppVersion, AppContact, OutputDir, Compression, Encryption, etc.
 
 ### 📁 Files and Run Sections 📦
