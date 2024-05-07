@@ -107,7 +107,7 @@ Password="Password for EXE Installation"
 - Additional setup configurations such as AppVersion, AppContact, OutputDir, Compression, Encryption, etc.
 
 
-### 📁 Files and Run Sections 📦
+### 📁 Files and Run Sections
 
 - **Files**: Specifies files to include in the installer.
 - **Run**: Specifies actions to perform after installation, such as running specific files or executables.
