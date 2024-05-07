@@ -136,4 +136,4 @@ For more details and instructions on usage, refer to the comments within the scr
 
 <h1 align="center"> ✨ Copyright ✨ </h1>
 
-- Copyright © 2024 [Resource & Rookie](https://www.facebook.com/ResourceRookie2023) - [Gyn](https://www.facebook.com/gyginee/) | [Long Leo](https://www.facebook.com/LongLeo97/).
+<h1 align="center"> ✨ Copyright © 2024 [Resource & Rookie](https://www.facebook.com/ResourceRookie2023) - [Gyn](https://www.facebook.com/gyginee/) | [Long Leo](https://www.facebook.com/LongLeo97/) ✨ </h1>
