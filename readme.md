@@ -1,11 +1,13 @@
 **v3.1** | [English](#) | [Tiếng Việt](./docs/REAME.vi-VN.md)
 
 <h1 align="center">
-  <br>
   EXE SETUP
-  <br>
-<h1>
-<p align="center">Extensions, Srcipts, Presets, Plugins,....for AE, PR, AU, PTS, AI, Davinci and More...</p>
+</h1>
+<h3 align="center">
+  Extensions, Srcipts, Presets, Plugins,....for AE, PR, AU, PTS, AI, Davinci and More...
+</h3>
+
+#
 
 ### 🔗 **Social Links**
 
