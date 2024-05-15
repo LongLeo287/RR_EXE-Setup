@@ -1,8 +1,8 @@
 // --------------------------------- INFOMATION ------------------------------- //
 //                                                                              //
 //               File Main                                                      //
-//               Script Version:	v3.2                                          //
-//               Homepage:		https://www.facebook.com/ResourceRookie2023       //
+//               Script Version:	v3.2                                        //
+//               Homepage:		https://www.facebook.com/ResourceRookie2023     //
 //               Copyright (C) 2023 Resource & Rookie®                          //
 //               All rights reserved.                                           //
 //               Author: Gyn, LongLeo                                           //
