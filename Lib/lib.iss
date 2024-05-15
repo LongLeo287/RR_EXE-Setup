@@ -1,7 +1,7 @@
-﻿// --------------------------------- INFOMATION ------------------------------- //
+// --------------------------------- INFOMATION ------------------------------- //
 //                                                                              //
-//               EXE For File Plugins AE/PR                                     //
-//               Script Version:	v3.1                                          //
+//               File Main                                                      //
+//               Script Version:	v3.2                                          //
 //               Homepage:		https://www.facebook.com/ResourceRookie2023       //
 //               Copyright (C) 2023 Resource & Rookie®                          //
 //               All rights reserved.                                           //
@@ -11,8 +11,51 @@
 
 
 #include "define.iss"
-[Code]
 
+[Setup]
+#define Space " "
+    WizardResizable               = no
+    DisableDirPage                = yes
+    DisableProgramGroupPage       = yes
+    Encryption                    = yes
+    Compression                   = lzma
+    //InternalCompressLevel         = ultra64
+    SolidCompression              = yes
+    WizardStyle                   = modern
+    BackColor                     = clSilver
+    LanguageDetectionMethod       = uilanguage
+    ShowLanguageDialog            = yes
+    AppPublisherURL               = {#Discord}
+    AppSupportURL                 = {#Facebook} 
+
+    ; Installation requires administrative privileges
+    //PrivilegesRequired=admin
+
+    ; Or installation does not require administrative privileges
+    //PrivilegesRequired            =lowest
+
+//--------------------------------- ICON FILE EXE ---------------------------------------------//
+
+    SetupIconFile                 =Data\R&R.ico
+    ; Specify the image to be displayed on the wizard dialog
+    WizardImageFile               =Data\rrbg1.bmp
+    ; Specify the image to be displayed on the welcome page
+    WizardSmallImageFile          =Data\rrtop.bmp
+
+//--------------------------------- LANGUAGES FILE EXE ---------------------------------------------//
+
+[Languages]
+    Name: "english";    MessagesFile: ".\lib\Languages\English.isl"
+    Name: "vietnamese"; MessagesFile: ".\lib\Languages\Vietnamese.isl"
+
+[CustomMessages]
+; English messages
+english.CopyrightMessage=Copyright belongs to Resource & Rookie®
+
+; Vietnamese messages
+vietnamese.CopyrightMessage=Bản quyền thuộc về Resource & Rookie®
+
+[Code]
   //------------------------------------MAIN FUNCTION------------------------------------------------------//
      // Function to open a URL in a web browser
         procedure OpenURL(const URL: String);
@@ -35,6 +78,7 @@
         begin
           OpenURL('{#Facebook}'); // Change the Facebook link according to your requirements
         end;
+
     //------------------------------------END BUTTON FUNCTION------------------------------------------------------//
 
     //------------------------------------INITIALIZE FUNCTION------------------------------------------------------//
@@ -42,7 +86,7 @@
          ButtonWidth = 100;
          ButtonHeight = 30;
          BottomMargin = 60;
-         LeftMarginPercent = 10;
+         LeftMarginPercent = 5;
          RightMarginPercent = 50;
 
         procedure CreateButton(Parent: TWinControl; const Caption: string; LeftPos, TopPos: Integer; OnClick: TNotifyEvent);
@@ -62,15 +106,26 @@
 
         procedure InitializeWizard();
         var
-         LeftMargin, RightMargin: Integer;
+         LeftMargin, ButtonSpacing, MiddleMargin, ButtonFacebookLeft: Integer;
         begin
-         LeftMargin := WizardForm.ClientWidth * LeftMarginPercent div 120;
-         RightMargin := WizardForm.ClientWidth * RightMarginPercent div 80;
+         // Calculate the sizes of margins and spacing between buttons
+         LeftMargin := WizardForm.ClientWidth div 10; // Left margin occupies 10% of the form's width
+         ButtonSpacing := 60; // Set the desired spacing between buttons
+         MiddleMargin := WizardForm.ClientHeight div 2 - ButtonHeight div 2; // Distance from the top to the middle of the form
 
-         CreateButton(WizardForm, 'Discord', LeftMargin, WizardForm.ClientHeight - ButtonHeight - BottomMargin, @ButtonClick);
-         CreateButton(WizardForm, 'Facebook', WizardForm.ClientWidth - RightMargin - ButtonWidth + 50, WizardForm.ClientHeight - ButtonHeight - BottomMargin, @Button2Click);
+         // Create the Discord button
+         CreateButton(WizardForm, 'Discord', LeftMargin, MiddleMargin, @ButtonClick);
+
+         // Calculate the position for the Facebook button to avoid overlapping with the Discord button
+         ButtonFacebookLeft := LeftMargin + ButtonWidth + ButtonSpacing;
+
+         // Create the Facebook button with the calculated position
+         CreateButton(WizardForm, 'Facebook', ButtonFacebookLeft, MiddleMargin, @Button2Click);
         end;
 
+//------------------------------------ANOTHER FUNCTION------------------------------------------------------//
+
+        // Check .NET4
         function IsDotNet4NotInstalled: Boolean;
         begin
          Result := not IsDotNetInstalled(net4Full, 0);
@@ -79,13 +134,11 @@
         // Displays an information dialog when starting the installation
         function InitializeSetup(): Boolean;
         begin
-         MsgBox('Bản quyền thuộc về Resource & Rookie®', mbInformation, MB_OK);
+         MsgBox(CustomMessage('CopyrightMessage'), mbInformation, MB_OK);
          Result := True;
         end;
-//------------------------------------INITIALZE FUNCTION------------------------------------------------------//
 
 //------------------------------------END FUNCTION------------------------------------------------------//
-
 
 //------------------------------------ADOBE FUNCTION------------------------------------------------------//
 function GetDirectories(const RootPath, appFolder: string): TStringList;
