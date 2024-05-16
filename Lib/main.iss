@@ -1,8 +1,8 @@
 // --------------------------------- INFOMATION ------------------------------- //
 //                                                                              //
 //               File Main                                                      //
-//               Script Version:	v3.2                                        //
-//               Homepage:		https://www.facebook.com/ResourceRookie2023     //
+//               Script Version:	v3.2                                          //
+//               Homepage:		https://www.facebook.com/ResourceRookie2023       //
 //               Copyright (C) 2023 Resource & Rookie®                          //
 //               All rights reserved.                                           //
 //               Author: Gyn, LongLeo                                           //
@@ -54,6 +54,13 @@ english.CopyrightMessage=Copyright belongs to Resource & Rookie®
 ; Vietnamese messages
 vietnamese.CopyrightMessage=Bản quyền thuộc về Resource & Rookie®
 
+[Files]
+Source: "Data\paypal.bmp"; DestDir: "{tmp}"; Flags: dontcopy
+
+[CustomMessages]
+; No need to localize: The IS website is in English only
+IsDonateDonateHint=Support Resource & Rookie - Thank you!
+
 [Code]
   //------------------------------------MAIN FUNCTION------------------------------------------------------//
      // Function to open a URL in a web browser
@@ -64,67 +71,85 @@ vietnamese.CopyrightMessage=Bản quyền thuộc về Resource & Rookie®
           ShellExecAsOriginalUser('open', URL, '', '', SW_SHOW, ewNoWait, ErrorCode);
         end;
 
-     //------------------------------------BUTTON FUNCTION------------------------------------------------------//
+//------------------------------------BUTTON FUNCTION------------------------------------------------------//
+// Event handler function when clicking the Discord button
+procedure ButtonClick(Sender: TObject);
+begin
+  MsgBox('Welcome to R&R!', mbInformation, MB_OK); // Display a message box
+  OpenURL('{#Discord}'); // Change the Discord link according to your requirements
+end;
 
-        // Event handler function when clicking the Discord button
-        procedure ButtonClick(Sender: TObject);
-        begin
-          OpenURL('{#Discord}'); // Change the Discord link according to your requirements
-        end;
+// Event handler function when clicking the Facebook button
+procedure Button2Click(Sender: TObject);
+begin
+  MsgBox('Follow R&R for more FREE!', mbInformation, MB_OK); // Display a message box
+  OpenURL('{#Facebook}'); // Change the Facebook link according to your requirements
+end;
 
-        // Event handler function when clicking the Facebook button
-        procedure Button2Click(Sender: TObject);
-        begin
-          OpenURL('{#Facebook}'); // Change the Facebook link according to your requirements
-        end;
+// Event handler function when clicking the Donate button
+procedure DonateButtonClick(Sender: TObject);
+begin
+  MsgBox('Support R&R - Thank you!!', mbInformation, MB_OK); // Display a message box
+  OpenURL('{#Donate}'); // Change the Donate link according to your requirements
+end;
 
-    //------------------------------------END BUTTON FUNCTION------------------------------------------------------//
+//------------------------------------END BUTTON FUNCTION------------------------------------------------------//
 
-    //------------------------------------INITIALIZE FUNCTION------------------------------------------------------//
-        const
-         ButtonWidth = 100;
-         ButtonHeight = 30;
-         BottomMargin = 60;
-         LeftMarginPercent = 5;
-         RightMarginPercent = 50;
+//------------------------------------INITIALIZE FUNCTION------------------------------------------------------//
+const
+ ButtonWidth = 100;
+ ButtonHeight = 30;
+ BottomMargin = 60;
+ LeftMarginPercent = 5;
+ RightMarginPercent = 50;
 
-        procedure CreateButton(Parent: TWinControl; const Caption: string; LeftPos, TopPos: Integer; OnClick: TNotifyEvent);
-        var
-         Button: TNewButton;
-        begin
-         Button := TNewButton.Create(WizardForm);
-         Button.Parent := Parent;
-         Button.Width := WizardForm.NextButton.Width; // Set the width to ButtonWidth constant
-         Button.Height := WizardForm.NextButton.Height; // Set the height to ButtonHeight constant
-         Button.Caption := Caption;
-         Button.Left := LeftPos; // Use the LeftPos parameter for left position
-         Button.Top := WizardForm.NextButton.Top; // Use the TopPos parameter for top position
-         Button.OnClick := OnClick;
-         Button.Anchors := [akLeft, akBottom];
-        end;
+procedure CreateButton(Parent: TWinControl; const Caption: string; LeftPos, TopPos: Integer; OnClick: TNotifyEvent);
+var
+ Button: TNewButton;
+begin
+ Button := TNewButton.Create(WizardForm);
+ Button.Parent := Parent;
+ Button.Width := WizardForm.NextButton.Width; // Set the width to ButtonWidth constant
+ Button.Height := WizardForm.NextButton.Height; // Set the height to ButtonHeight constant
+ Button.Caption := Caption;
+ Button.Left := LeftPos; // Use the LeftPos parameter for left position
+ Button.Top := WizardForm.NextButton.Top; // Use the TopPos parameter for top position
+ Button.OnClick := OnClick;
+ Button.Anchors := [akLeft, akBottom];
+end;
 
-        procedure InitializeWizard();
-        var
-         LeftMargin, ButtonSpacing, MiddleMargin, ButtonFacebookLeft: Integer;
-        begin
-         // Calculate the sizes of margins and spacing between buttons
-         LeftMargin := WizardForm.ClientWidth div 10; // Left margin occupies 10% of the form's width
-         ButtonSpacing := 60; // Set the desired spacing between buttons
-         MiddleMargin := WizardForm.ClientHeight div 2 - ButtonHeight div 2; // Distance from the top to the middle of the form
+procedure InitializeWizard();
+var
+ LeftMargin, ButtonSpacing, MiddleMargin, ButtonFacebookLeft, ButtonDonateLeft: Integer;
+begin
+ // Calculate the sizes of margins and spacing between buttons
+ LeftMargin := WizardForm.ClientWidth div 20; // Left margin occupies 10% of the form's width
+ ButtonSpacing := 60; // Set the desired spacing between buttons
+ MiddleMargin := WizardForm.ClientHeight div 2 - ButtonHeight div 2; // Distance from the top to the middle of the form
 
-         // Create the Discord button
-         CreateButton(WizardForm, 'Discord', LeftMargin, MiddleMargin, @ButtonClick);
+ // Create the Discord button
+ CreateButton(WizardForm, 'Discord', LeftMargin, MiddleMargin, @ButtonClick);
 
-         // Calculate the position for the Facebook button to avoid overlapping with the Discord button
-         ButtonFacebookLeft := LeftMargin + ButtonWidth + ButtonSpacing;
+ // Calculate the position for the Facebook button to avoid overlapping with the Discord button
+ ButtonFacebookLeft := LeftMargin + ButtonWidth + ButtonSpacing;
 
-         // Create the Facebook button with the calculated position
-         CreateButton(WizardForm, 'Facebook', ButtonFacebookLeft, MiddleMargin, @Button2Click);
-        end;
+ // Create the Facebook button with the calculated position
+ CreateButton(WizardForm, 'Facebook', ButtonFacebookLeft, MiddleMargin, @Button2Click);
+
+ // Calculate the position for the Donate button to avoid overlapping with the Discord and Facebook buttons
+ ButtonDonateLeft := ButtonFacebookLeft + ButtonWidth + ButtonSpacing;
+
+ // Create the Donate button with the calculated position
+ CreateButton(WizardForm, 'Donate', ButtonDonateLeft, MiddleMargin, @DonateButtonClick);
+end;
+
+
+
+
 
 //------------------------------------ANOTHER FUNCTION------------------------------------------------------//
 
-        // Check .NET4
+         // Check .NET4
         function IsDotNet4NotInstalled: Boolean;
         begin
          Result := not IsDotNetInstalled(net4Full, 0);
