@@ -14,25 +14,24 @@
 
 [Setup]
 #define Space " "
-    WizardResizable               = no
-    DisableDirPage                = yes
-    DisableProgramGroupPage       = yes
-    Encryption                    = yes
-    Compression                   = lzma
-    //InternalCompressLevel         = ultra64
-    SolidCompression              = yes
-    WizardStyle                   = modern
-    BackColor                     = clSilver
-    LanguageDetectionMethod       = uilanguage
-    ShowLanguageDialog            = yes
-    AppPublisherURL               = {#Discord}
-    AppSupportURL                 = {#Facebook} 
-
-    ; Installation requires administrative privileges
-    //PrivilegesRequired=admin
-
-    ; Or installation does not require administrative privileges
-    //PrivilegesRequired            =lowest
+    AppContact                    ={#MyAppPublisher}
+    AppCopyright                  ={#Copyright}
+    AppPublisherURL               ={#Discord}
+    AppSupportURL                 ={#Facebook}
+    BackColor                     =clSilver
+    Compression                   =lzma2/max
+    DisableDirPage                =yes
+    DisableProgramGroupPage       =yes
+    Encryption                    =yes
+    InternalCompressLevel         =ultra64
+    LanguageDetectionMethod       =uilanguage
+    PrivilegesRequired            = none
+    Password                      =R&R
+    ShowLanguageDialog            =yes
+    SolidCompression              =yes
+    VersionInfoVersion            =1.3.0.0
+    WizardResizable               =no
+    WizardStyle                   =modern
 
 //--------------------------------- ICON FILE EXE ---------------------------------------------//
 
@@ -205,7 +204,6 @@ begin
   end;
 end;
 //------------------------------------END ADOBE FUNCTION------------------------------------------------------//
-
 //------------------------------------UNINSTALL FUNCTION------------------------------------------------------//
 
 procedure DeleteFilesAndFoldersFromConfig();
@@ -244,4 +242,5 @@ begin
     DeleteFilesAndFoldersFromConfig;
   end;
 end;
+
 //------------------------------------END UNINSTALL FUNCTION------------------------------------------------------//
